@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: scroll;
+}
+.navbar,
+.footer,
+.landing-page {
+  font-family: "Poppins", sans-serif;
+}
+.package-sidebar,
+.details-and-version {
+  font-family: "Source Sans 3", sans-serif;
+}
+.f7728d4c {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      270deg,
+      rgba(176, 42, 42, 0.16) 0%,
+      rgba(176, 42, 42, 0.56) 18.45%,
+      rgba(176, 42, 42, 0.8) 49.67%,
+      rgba(176, 42, 42, 0.56) 82.52%,
+      rgba(176, 42, 42, 0.196364) 99.7%,
+      rgba(189, 40, 40, 0) 99.71%,
+      rgba(203, 56, 55, 0) 99.72%,
+      rgba(203, 56, 55, 0.16) 99.73%
+    ),
+    url("https://static-production.npmjs.com/abf53a31b2da4657a1a004ee9358551c.png");
+}
