@@ -2,7 +2,7 @@
 > This project is a clone of the npmjs website. Its a dynamic website that fetches data from the npmjs API and displays it on the website. The website is built using React and Tailwindcss.
 
 <div>
-  <img src="./src/assets/Banner.jpg" alt="Project Banner">
+  <img src="./src/assets/banner.jpg" alt="Project Banner">
 </div>
 
 ## Built With
