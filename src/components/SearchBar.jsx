@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { textTrimmer } from './utils';
+import { IoIosSearch } from "react-icons/io";
 
 const SearchBar = () => {
     const NPMJS_ENDPOINT = import.meta.env.VITE_NPNJS_API_ENDPOINT;
@@ -68,7 +69,8 @@ const SearchBar = () => {
     };
 
     return (
-        <div className="flex w-full bg-[#f2f2f2] relative">
+        <div className="searchbar flex items-center w-full bg-[#f2f2f2] relative">
+            <span className='text-xl text-[#9ca3af] pl-4'><IoIosSearch /></span>
             <input
                 type="text"
                 placeholder="Search packages"
@@ -90,7 +92,7 @@ const SearchBar = () => {
                         <p className='text-xs'>{textTrimmer(result?.description, 60)}</p>
                     </div>
                 ))) : loading ? (
-                <div className="p-2 bg-white border-b" > ... </div>
+                    <div className="p-2 bg-white border-b" > ... </div>
                 ) : ("")}
             </div>
         </div>

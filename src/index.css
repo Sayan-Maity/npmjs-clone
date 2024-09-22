@@ -19,6 +19,7 @@ body {
 .landing-page {
   font-family: "Poppins", sans-serif;
 }
+.searchbar,
 .package-sidebar,
 .details-and-version {
   font-family: "Source Sans 3", sans-serif;
