@@ -5,6 +5,7 @@ import PageWrapper from "../components/PageWrapper";
 import DetailsAndVersion from "../components/DetailsAndVersion";
 
 const PackageDetails = () => {
+  const NPMJS_ENDPOINT = import.meta.env.VITE_NPNJS_API_ENDPOINT;
   const [packageDetails, setPackageDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ const PackageDetails = () => {
       const fetchData = async () => {
         try {
           const name = encodeURIComponent(packageName);
-          const response = await axios.get(`https://registry.npmjs.org/${name}/latest`);
+          const response = await axios.get(`${NPMJS_ENDPOINT}/${name}/latest`);
           if (response.status === 200) {
             setPackageDetails(response.data);
           }

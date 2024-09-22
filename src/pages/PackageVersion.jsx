@@ -5,19 +5,19 @@ import PageWrapper from "../components/PageWrapper";
 import DetailsAndVersion from "../components/DetailsAndVersion";
 
 const PackageVersion = () => {
+  const NPMJS_ENDPOINT = import.meta.env.VITE_NPNJS_API_ENDPOINT;
   const { packageName, version } = useParams();
   const [packageDetails, setPackageDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("package =>", packageName, "version =>", version)
 
   useEffect(() => {
     if (packageName && version) {
       const fetchData = async () => {
         try {
           const name = encodeURIComponent(packageName);
-          const response = await axios.get(`https://registry.npmjs.org/${name}/${version}`);
+          const response = await axios.get(`${NPMJS_ENDPOINT}/${name}/${version}`);
           if (response.status === 200) {
             setPackageDetails(response.data);
           }
@@ -33,8 +33,6 @@ const PackageVersion = () => {
       setLoading(false);
     }
   }, [packageName, version]);
-
-  // console.log("packageDetails =>", packageDetails);
 
   return (
     <PageWrapper>

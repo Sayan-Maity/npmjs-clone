@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { textTrimmer } from './utils';
 
 const SearchBar = () => {
+    const NPMJS_ENDPOINT = import.meta.env.VITE_NPNJS_API_ENDPOINT;
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResults, setShowSearchResults] = useState(false);
@@ -15,7 +16,7 @@ const SearchBar = () => {
         if (value) {
             setLoading(true);
             try {
-                const response = await axios.get('https://registry.npmjs.org/-/v1/search', {
+                const response = await axios.get(`${NPMJS_ENDPOINT}/-/v1/search`, {
                     params: {
                         text: value,
                         size: 10,
